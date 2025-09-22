@@ -1,0 +1,49 @@
+MODEL EXTRACTION SUMMARY
+Generated: 2025-09-22 19:35:18
+============================================================
+
+Model: Random Forest (Cluster-based)
+Variable: rf_model
+File: rf_model_20250922_193516.pkl
+Size: 551.84 MB
+Method: Joblib (PKL)
+----------------------------------------
+Model: Random Forest (Zone-based)
+Variable: rf_model_z
+File: rf_model_z_20250922_193516.pkl
+Size: 539.78 MB
+Method: Joblib (PKL)
+----------------------------------------
+Model: XGBoost Model (Cluster-based
+Variable: xgb_model
+File: xgb_model_20250922_193516.json
+Size: 2.13 MB
+Method: XGBoost native (JSON)
+----------------------------------------
+Model: XGBoost (Zone-based)
+Variable: xgb_model_z
+File: xgb_model_z_20250922_193516.json
+Size: 2.23 MB
+Method: XGBoost native (JSON)
+----------------------------------------
+
+LOADING INSTRUCTIONS:
+To load these models in a new session:
+
+import joblib
+import xgboost as xgb
+
+# Load Random Forest (Cluster-based)
+rf_model = joblib.load('rf_model_20250922_193516.pkl')
+
+# Load Random Forest (Zone-based)
+rf_model_z = joblib.load('rf_model_z_20250922_193516.pkl')
+
+# Load XGBoost Model (Cluster-based
+xgb_model = xgb.Booster()
+xgb_model.load_model('xgb_model_20250922_193516.json')
+
+# Load XGBoost (Zone-based)
+xgb_model_z = xgb.Booster()
+xgb_model_z.load_model('xgb_model_z_20250922_193516.json')
+
